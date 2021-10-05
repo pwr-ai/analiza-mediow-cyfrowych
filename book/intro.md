@@ -1,16 +1,9 @@
-# Welcome to your Jupyter Book
+# Analiza Mediów Cyfrowych
 
-This is a small sample book to give you a feel for how book content is
-structured.
+![Python analizuje dane](./logo2.png)
 
-:::{note}
-Here is a note!
-:::
+** By Tomasz Kajdanowicz, Kamil Tagowski, Krzysztof Rajda **
 
-And here is a code block:
+```python
 
 ```
-e = mc^2
-```
-
-Check out the content pages bundled with this sample book to see more.

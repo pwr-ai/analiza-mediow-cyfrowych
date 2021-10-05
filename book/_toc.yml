@@ -1,7 +1,10 @@
-# Table of contents
-# Learn more at https://jupyterbook.org/customize/toc.html
-
 format: jb-book
 root: intro
-chapters:
-- file: labs/lab1
+parts:
+  - caption: Zajęcia
+    chapters:
+    - file: labs/zasady
+  - caption: Projekt
+    chapters:
+    - file: labs/propozycja_projektu
+    - file: labs/przykladowe_projekty
