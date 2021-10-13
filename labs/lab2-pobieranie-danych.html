@@ -1,0 +1,449 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pozyskiwanie danych z mediów społecznościowych &#8212; Analiza mediów cyfrowych</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Analiza mediów cyfrowych</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Analiza Mediów Cyfrowych
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Zajęcia
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="zasady.html">
+   Zasady laboratorium
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Projekt
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="propozycja_projektu.html">
+   Propozycja projektu
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="przykladowe_projekty.html">
+   Przykładowe projekty
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/labs/lab2-pobieranie-danych.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/pwr-ai/analiza-mediow-cyfrowych/master?urlpath=tree/docs/labs/lab2-pobieranie-danych.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dostep-do-api">
+   Dostęp do API
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plusy-uzywania-api">
+     Plusy używania API
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#wady-uzywania-api">
+     Wady używania API
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scrapowanie-danych">
+   Scrapowanie danych
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#legalnosc-scrapowania-danych">
+     Legalność scrapowania danych
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plusy-scrapowania">
+     Plusy scrapowania
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#wady-scrapowania">
+     Wady scrapowania
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sposoby-w-jaki-media-spolecznosciowe-zabezpieczaja-sie-przed-scrapowaniem">
+     Sposoby w jaki media społecznościowe zabezpieczaja się przed scrapowaniem
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#biblioteki-pythona-wspomagajace-scrapowanie">
+   Biblioteki Pythona wspomagajace scrapowanie
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#requests">
+     Requests
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#beautifulsoup">
+     BeautifulSoup
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#selenium">
+     Selenium
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scrapy">
+     Scrapy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dlaczego-nie-warto-opierac-biznesu-o-dostep-do-jednego-medium-spolecznosciowego">
+   Dlaczego nie warto opierać biznesu o dostęp do jednego medium społecznościowego?
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="pozyskiwanie-danych-z-mediow-spolecznosciowych">
+<h1>Pozyskiwanie danych z mediów społecznościowych<a class="headerlink" href="#pozyskiwanie-danych-z-mediow-spolecznosciowych" title="Permalink to this headline">¶</a></h1>
+<p>AI nie istnieje bez danych. Dla przykładów lub nauki możemy użyć gotowych, stworzonych już zbiorów danych - niemniej rozważajc jakikowlwiek realny problem, będziemy postawieni przed koniecznościa zgromadzenia danych własnoręcznie.</p>
+<p>Media społecznościowe niechętnie dziela się swoimi danymi - jest to dla nich jedno z głownych źródeł dochodu (<a class="reference external" href="https://blog.malwarebytes.com/privacy-2/2020/04/how-social-media-mine-data-sell-personal-information-for-profit/">ciekawy artykuł</a>). Część mediów oferuje interfejs dostępu do swoich danych, najczęściej obwarowany licznymi ograniczeniami. W pozostałych przypadkach pozostaje ręczne scrapowanie danych.</p>
+<div class="section" id="dostep-do-api">
+<h2>Dostęp do API<a class="headerlink" href="#dostep-do-api" title="Permalink to this headline">¶</a></h2>
+<p>Większość dużych platform społecznościowych umożliwia programistom dostęp do danych serwisu poprzez API.</p>
+<p>Przykładowe linki do dokumentacji API:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://developers.facebook.com/docs/graph-api/get-started">Facebook</a></p></li>
+<li><p><a class="reference external" href="https://developer.twitter.com/en/docs/twitter-api/getting-started/about-twitter-api">Twitter</a></p></li>
+<li><p><a class="reference external" href="https://developers.google.com/youtube/v3/getting-started">Youtube</a></p></li>
+<li><p><a class="reference external" href="https://www.reddit.com/dev/api/">Reddit</a></p></li>
+<li><p><a class="reference external" href="https://www.wykop.pl/dla-programistow/apiv2docs/">Wykop</a></p></li>
+<li><p><a class="reference external" href="https://vk.com/dev/openapi">VK</a></p></li>
+</ul>
+<div class="section" id="plusy-uzywania-api">
+<h3>Plusy używania API<a class="headerlink" href="#plusy-uzywania-api" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>pełna legalność rozwiazania</p></li>
+<li><p>stabilność rozwiazania (przejrzyste zmiany, kompatybilność wsteczna)</p></li>
+<li><p>przejrzysty podział na endpointy</p></li>
+<li><p>prosta i czytelna zwrotka (JSON/XML)</p></li>
+<li><p>istnieja gotowe klienty API do większości serwisów</p></li>
+<li><p>możliwość zbudowania biznesu wokół medium społecznościowego</p></li>
+</ul>
+</div>
+<div class="section" id="wady-uzywania-api">
+<h3>Wady używania API<a class="headerlink" href="#wady-uzywania-api" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>limity ilości danych</p></li>
+<li><p>limity tempa pobierania danych</p></li>
+<li><p>limity jakościowe danych</p></li>
+<li><p>darmowe poziomy dostępu maja często ograniczone możliwości</p></li>
+<li><p>płatne poziomy dostępu sa drogie</p></li>
+<li><p>często dostęp do API uzyskujemy po weryfikacji naszej aplikacji (co najmniej w FB i Twitter)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="scrapowanie-danych">
+<h2>Scrapowanie danych<a class="headerlink" href="#scrapowanie-danych" title="Permalink to this headline">¶</a></h2>
+<p>W przypadku gdy portal społecznościowy nie udostępnia API lub z jakiegoś powodu nie chcemy/nie możemy z niego skorzystać, pozostaje nam użyć scrapera.</p>
+<p>Scrapowanie stron polega na ściganiu ich zawartości z poziomu skryptu. Scrapujac, niejako “udajemy” normalnego użytkownika i jego request z przegladarki</p>
+<div class="section" id="legalnosc-scrapowania-danych">
+<h3>Legalność scrapowania danych<a class="headerlink" href="#legalnosc-scrapowania-danych" title="Permalink to this headline">¶</a></h3>
+<p>Scrapowanie danych, rozumiane jako dostęp do zasobów portalu na takich samych zasadach jak użytkownik przez przegladarkę, najprawdopodobniej nie jest działaniem nielegalnym - jest to nieuregulowane w polskim prawodawstwie. Należy jednocześnie przestrzegać przepisów prawa autorskiego i RODO oraz dbać o niepogorszenie warunków działania strony (unikać <a class="reference external" href="https://pl.wikipedia.org/wiki/Blokada_us%C5%82ug">DoS</a>)</p>
+<p>Natomiast wiele portali społecznościowych ma w swoich regulaminach lub warunkach użytkowania (ang. <em>ToS - Terms of Service</em>) zapis, w którym zabrania scrapowania, w szczególności w celach komercyjnych.</p>
+</div>
+<div class="section" id="plusy-scrapowania">
+<h3>Plusy scrapowania<a class="headerlink" href="#plusy-scrapowania" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>potencjalnie nieograniczone możliwości</p></li>
+<li><p>darmowy dostęp</p></li>
+<li><p>istnieje wiele narzędzi wspomagajcych scrapowanie</p></li>
+</ul>
+</div>
+<div class="section" id="wady-scrapowania">
+<h3>Wady scrapowania<a class="headerlink" href="#wady-scrapowania" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>zazwyczaj łamanie ToS</p></li>
+<li><p>niestabilność rozwiazania</p></li>
+<li><p>konieczność ręcznej analizy strony i “rozgryzienia” jej struktury</p></li>
+<li><p>konieczność “walki” z portalem</p></li>
+<li><p>koszty poniesione na infrastrukturę i dodatkowe usługi</p></li>
+</ul>
+</div>
+<div class="section" id="sposoby-w-jaki-media-spolecznosciowe-zabezpieczaja-sie-przed-scrapowaniem">
+<h3>Sposoby w jaki media społecznościowe zabezpieczaja się przed scrapowaniem<a class="headerlink" href="#sposoby-w-jaki-media-spolecznosciowe-zabezpieczaja-sie-przed-scrapowaniem" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>częsta zmiana wygladu strony</p></li>
+<li><p>dynamiczne ładowanie danych</p></li>
+<li><p>autentykacja requestów</p></li>
+<li><p>limit requestów per IP</p></li>
+<li><p>badanie anomalii i blokowanie podejrzanych</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="biblioteki-pythona-wspomagajace-scrapowanie">
+<h2>Biblioteki Pythona wspomagajace scrapowanie<a class="headerlink" href="#biblioteki-pythona-wspomagajace-scrapowanie" title="Permalink to this headline">¶</a></h2>
+<p>Scrapowanie można realizować przez natywne funkcjonalności Pythona (np. wyrażenia regularne), ale istnieje szereg bibliotek ułatwiajacych to zadanie:</p>
+<div class="section" id="requests">
+<h3><a class="reference external" href="https://docs.python-requests.org/en/latest/">Requests</a><a class="headerlink" href="#requests" title="Permalink to this headline">¶</a></h3>
+<p>Najprostsza biblioteka służaca do wykonywania zapytań i pobierania zawartości stron</p>
+</div>
+<div class="section" id="beautifulsoup">
+<h3><a class="reference external" href="https://beautiful-soup-4.readthedocs.io/en/latest/">BeautifulSoup</a><a class="headerlink" href="#beautifulsoup" title="Permalink to this headline">¶</a></h3>
+<p>Podstawowy (lecz wystarczajacy) parser HTMLa - pozwala łatwo przeszukiwać zawartośc stron po ich ściagnięciu</p>
+</div>
+<div class="section" id="selenium">
+<h3><a class="reference external" href="https://selenium-python.readthedocs.io/">Selenium</a><a class="headerlink" href="#selenium" title="Permalink to this headline">¶</a></h3>
+<p>Poprzez emulację przegladarki, pozwala na interakcję ze strona z użyciem JavaScriptu</p>
+</div>
+<div class="section" id="scrapy">
+<h3><a class="reference external" href="https://docs.scrapy.org/en/latest/intro/overview.html">Scrapy</a><a class="headerlink" href="#scrapy" title="Permalink to this headline">¶</a></h3>
+<p>Narzędzie automatyzujace wiele powtarzalnych procesów - paginację, wyszukiwanie danych w HTMLu, zrównoleglenie parsowania, obsługę cookies i requestów.</p>
+</div>
+</div>
+<div class="section" id="dlaczego-nie-warto-opierac-biznesu-o-dostep-do-jednego-medium-spolecznosciowego">
+<h2>Dlaczego nie warto opierać biznesu o dostęp do jednego medium społecznościowego?<a class="headerlink" href="#dlaczego-nie-warto-opierac-biznesu-o-dostep-do-jednego-medium-spolecznosciowego" title="Permalink to this headline">¶</a></h2>
+<p>We wrześniu 2019 na łamach amerykańskiej edycji Business Insidera ukazał się <a class="reference external" href="https://www.businessinsider.com/facebook-review-all-marketing-partners-instagram-data-scraping-2019-8">artykuł nt. nielegalnego wykorzystania danych</a> z portalu Instagram przez szereg firm. Wśród nich wymieniono (niesłusznie) polska firmę monitorujaca Internet <a class="reference external" href="https://brand24.pl">Brand24</a></p>
+<p>Co ciekawe, artykuł stawiał w niekorzystym świetle nawet bardziej samego Facebooka (właściciela Instagramu) niż wymienione firmy. Reakcja Facebooka było natychmiastowe zablokowanie wszystkiego co zwiazane z tymi firmami - kont firmowych, kont prywatnych właścicieli, podpiętych kont API, podpiętych aplikacji, wtyczek Messengera itd - zarówno z Facebooka jak i Instagrama</p>
+<p>Decyzja Facebooka była natychmiastowa, nieodwołalna i bez podania jakiegokolwiek powodu - wg. ToS maja pełne prawo swobodnie dysponować dostępami do swoich zasobów.</p>
+<p>Po prawie rocznej prawnej batalii, w przypadku Brand24 Facebook stwierdził że nie miał podstaw do takiego działania i dostępy/konta zostały przywrócone - jednak kosztowało to firmę utratę 10% klientów, spadek o 40% wartości giełdowej i konieczność znacznej redukcji zatrudnienia. Wiele spośród wymienionych w artykule firm upadło całkowicie.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./labs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Tomasz Kajdanowicz, Kamil Tagowski, Krzysztof Rajda<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
