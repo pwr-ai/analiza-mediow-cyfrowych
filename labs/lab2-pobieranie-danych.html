@@ -51,6 +51,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Propozycja projektu" href="propozycja_projektu.html" />
+    <link rel="prev" title="Zasady laboratorium" href="zasady.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -89,13 +91,25 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Zajęcia
+  Laboratorium 1
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="zasady.html">
    Zasady laboratorium
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Laboratorium 2
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Pozyskiwanie danych z mediów społecznościowych
   </a>
  </li>
 </ul>
@@ -292,8 +306,8 @@
                 
   <div class="section" id="pozyskiwanie-danych-z-mediow-spolecznosciowych">
 <h1>Pozyskiwanie danych z mediów społecznościowych<a class="headerlink" href="#pozyskiwanie-danych-z-mediow-spolecznosciowych" title="Permalink to this headline">¶</a></h1>
-<p>AI nie istnieje bez danych. Dla przykładów lub nauki możemy użyć gotowych, stworzonych już zbiorów danych - niemniej rozważajc jakikowlwiek realny problem, będziemy postawieni przed koniecznościa zgromadzenia danych własnoręcznie.</p>
-<p>Media społecznościowe niechętnie dziela się swoimi danymi - jest to dla nich jedno z głownych źródeł dochodu (<a class="reference external" href="https://blog.malwarebytes.com/privacy-2/2020/04/how-social-media-mine-data-sell-personal-information-for-profit/">ciekawy artykuł</a>). Część mediów oferuje interfejs dostępu do swoich danych, najczęściej obwarowany licznymi ograniczeniami. W pozostałych przypadkach pozostaje ręczne scrapowanie danych.</p>
+<p>AI nie istnieje bez danych. Dla przykładów lub nauki możemy użyć gotowych, stworzonych już zbiorów danych - niemniej rozważając jakikowlwiek realny problem, będziemy postawieni przed koniecznością zgromadzenia danych własnoręcznie.</p>
+<p>Media społecznościowe niechętnie dzielą się swoimi danymi - jest to dla nich jedno z głownych źródeł dochodu (<a class="reference external" href="https://blog.malwarebytes.com/privacy-2/2020/04/how-social-media-mine-data-sell-personal-information-for-profit/">ciekawy artykuł</a>). Część mediów oferuje interfejs dostępu do swoich danych, najczęściej obwarowany licznymi ograniczeniami. W pozostałych przypadkach pozostaje ręczne scrapowanie danych.</p>
 <div class="section" id="dostep-do-api">
 <h2>Dostęp do API<a class="headerlink" href="#dostep-do-api" title="Permalink to this headline">¶</a></h2>
 <p>Większość dużych platform społecznościowych umożliwia programistom dostęp do danych serwisu poprzez API.</p>
@@ -313,7 +327,7 @@
 <li><p>stabilność rozwiazania (przejrzyste zmiany, kompatybilność wsteczna)</p></li>
 <li><p>przejrzysty podział na endpointy</p></li>
 <li><p>prosta i czytelna zwrotka (JSON/XML)</p></li>
-<li><p>istnieja gotowe klienty API do większości serwisów</p></li>
+<li><p>istnieją gotowe klienty API do większości serwisów</p></li>
 <li><p>możliwość zbudowania biznesu wokół medium społecznościowego</p></li>
 </ul>
 </div>
@@ -323,8 +337,8 @@
 <li><p>limity ilości danych</p></li>
 <li><p>limity tempa pobierania danych</p></li>
 <li><p>limity jakościowe danych</p></li>
-<li><p>darmowe poziomy dostępu maja często ograniczone możliwości</p></li>
-<li><p>płatne poziomy dostępu sa drogie</p></li>
+<li><p>darmowe poziomy dostępu mają często ograniczone możliwości</p></li>
+<li><p>płatne poziomy dostępu są drogie</p></li>
 <li><p>często dostęp do API uzyskujemy po weryfikacji naszej aplikacji (co najmniej w FB i Twitter)</p></li>
 </ul>
 </div>
@@ -343,14 +357,14 @@
 <ul class="simple">
 <li><p>potencjalnie nieograniczone możliwości</p></li>
 <li><p>darmowy dostęp</p></li>
-<li><p>istnieje wiele narzędzi wspomagajcych scrapowanie</p></li>
+<li><p>istnieje wiele narzędzi wspomagających scrapowanie</p></li>
 </ul>
 </div>
 <div class="section" id="wady-scrapowania">
 <h3>Wady scrapowania<a class="headerlink" href="#wady-scrapowania" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>zazwyczaj łamanie ToS</p></li>
-<li><p>niestabilność rozwiazania</p></li>
+<li><p>niestabilność rozwiązania</p></li>
 <li><p>konieczność ręcznej analizy strony i “rozgryzienia” jej struktury</p></li>
 <li><p>konieczność “walki” z portalem</p></li>
 <li><p>koszty poniesione na infrastrukturę i dodatkowe usługi</p></li>
@@ -389,10 +403,10 @@
 </div>
 <div class="section" id="dlaczego-nie-warto-opierac-biznesu-o-dostep-do-jednego-medium-spolecznosciowego">
 <h2>Dlaczego nie warto opierać biznesu o dostęp do jednego medium społecznościowego?<a class="headerlink" href="#dlaczego-nie-warto-opierac-biznesu-o-dostep-do-jednego-medium-spolecznosciowego" title="Permalink to this headline">¶</a></h2>
-<p>We wrześniu 2019 na łamach amerykańskiej edycji Business Insidera ukazał się <a class="reference external" href="https://www.businessinsider.com/facebook-review-all-marketing-partners-instagram-data-scraping-2019-8">artykuł nt. nielegalnego wykorzystania danych</a> z portalu Instagram przez szereg firm. Wśród nich wymieniono (niesłusznie) polska firmę monitorujaca Internet <a class="reference external" href="https://brand24.pl">Brand24</a></p>
-<p>Co ciekawe, artykuł stawiał w niekorzystym świetle nawet bardziej samego Facebooka (właściciela Instagramu) niż wymienione firmy. Reakcja Facebooka było natychmiastowe zablokowanie wszystkiego co zwiazane z tymi firmami - kont firmowych, kont prywatnych właścicieli, podpiętych kont API, podpiętych aplikacji, wtyczek Messengera itd - zarówno z Facebooka jak i Instagrama</p>
+<p>We wrześniu 2019 na łamach amerykańskiej edycji Business Insidera ukazał się <a class="reference external" href="https://www.businessinsider.com/facebook-review-all-marketing-partners-instagram-data-scraping-2019-8">artykuł nt. nielegalnego wykorzystania danych</a> z portalu Instagram przez szereg firm. Wśród nich wymieniono (niesłusznie) polską firmę monitorujacą Internet <a class="reference external" href="https://brand24.pl">Brand24</a></p>
+<p>Co ciekawe, artykuł stawiał w niekorzystym świetle nawet bardziej samego Facebooka (właściciela Instagramu) niż wymienione firmy. Reakcją Facebooka było natychmiastowe zablokowanie wszystkiego co powiązane z tymi firmami - kont firmowych, kont prywatnych właścicieli, podpiętych kont API, podpiętych aplikacji, wtyczek Messengera itd - zarówno z Facebooka, jak i Instagrama</p>
 <p>Decyzja Facebooka była natychmiastowa, nieodwołalna i bez podania jakiegokolwiek powodu - wg. ToS maja pełne prawo swobodnie dysponować dostępami do swoich zasobów.</p>
-<p>Po prawie rocznej prawnej batalii, w przypadku Brand24 Facebook stwierdził że nie miał podstaw do takiego działania i dostępy/konta zostały przywrócone - jednak kosztowało to firmę utratę 10% klientów, spadek o 40% wartości giełdowej i konieczność znacznej redukcji zatrudnienia. Wiele spośród wymienionych w artykule firm upadło całkowicie.</p>
+<p>Po prawie rocznej prawnej batalii, w przypadku Brand24 Facebook stwierdził, że nie miał podstaw do takiego działania i dostępy/konta zostały przywrócone - jednak kosztowało to firmę utratę 10% klientów, spadek o 40% wartości giełdowej i konieczność znacznej redukcji zatrudnienia. Wiele spośród wymienionych w artykule firm upadło całkowicie.</p>
 </div>
 </div>
 
@@ -421,6 +435,8 @@
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="zasady.html" title="previous page">Zasady laboratorium</a>
+    <a class='right-next' id="next-link" href="propozycja_projektu.html" title="next page">Propozycja projektu</a>
 
         </div>
         
