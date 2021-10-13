@@ -1,9 +1,12 @@
 format: jb-book
 root: intro
 parts:
-  - caption: Zajęcia
+  - caption: Laboratorium 1
     chapters:
     - file: labs/zasady
+  - caption: Laboratorium 2
+    chapters:
+    - file: labs/lab2-pobieranie-danych
   - caption: Projekt
     chapters:
     - file: labs/propozycja_projektu
