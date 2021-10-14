@@ -7,6 +7,7 @@ parts:
   - caption: Laboratorium 2
     chapters:
     - file: labs/lab2-pobieranie-danych
+    - file: labs/lab2-wizualizacja-danych
   - caption: Projekt
     chapters:
     - file: labs/propozycja_projektu
