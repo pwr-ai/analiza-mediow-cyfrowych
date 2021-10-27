@@ -8,6 +8,8 @@ parts:
     chapters:
     - file: labs/lab2-pobieranie-danych
     - file: labs/lab2-wizualizacja-danych
+  - caption: Laboratorium 3
+    - file: labs/lab3-sentiment-topics
   - caption: Projekt
     chapters:
     - file: labs/propozycja_projektu
