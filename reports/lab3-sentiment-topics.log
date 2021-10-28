@@ -32,8 +32,8 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['import spacy', '', '# wczytujemy moduł językowy spacy - obsługa innych języków: https://spacy.io/usage/models', "nlp = spacy.load('en_core_web_sm', disable=['parser', 'ner'])", '']
+['import spacy', '', '# wczytujemy moduł językowy spacy - obsługa innych języków: https://spacy.io/usage/models', 'nlp = spacy.load("en_core_web_sm", disable=["parser", "ner"])', '']
 ...
-['             )', '        ]', '    )', '', 'print(cleaned[0])']
+['            )', '        ]', '    )', '', 'print(cleaned[0])']
 -------------------
 
