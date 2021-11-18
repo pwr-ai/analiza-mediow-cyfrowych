@@ -11,6 +11,9 @@ parts:
   - caption: Laboratorium 3
     chapters:
     - file: labs/lab3-sentiment-topics
+  - caption: Laboratorium 4
+    chapters:
+    - file: labs/lab4-community-detection
   - caption: Projekt
     chapters:
     - file: labs/propozycja_projektu
