@@ -117,6 +117,7 @@ PyYAML = "==5.4.1"
 Send2Trash = "==1.8.0"
 Sphinx = "==3.5.4"
 SQLAlchemy = "==1.4.22"
+plotly = "==5.10.0"
 
 [dev-packages]
 
