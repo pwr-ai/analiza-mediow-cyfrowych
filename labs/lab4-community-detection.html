@@ -327,16 +327,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">f17d728e971c</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;networkx&#39;
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="tworzenie-grafu">
@@ -612,7 +602,56 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/lab4-community-detection_50_0.png" src="../_images/lab4-community-detection_50_0.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">RuntimeError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
+<span class="ne">RuntimeError</span>: module compiled against API version 0xf but this version of numpy is 0xe
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="nn">File ~/PycharmProjects/analiza-mediow-cyfrowych/.venv/lib/python3.9/site-packages/networkx/drawing/nx_pylab.py:102,</span> in <span class="ni">draw</span><span class="nt">(G, pos, ax, **kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">101</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">102</span>     <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">    </span><span class="mi">103</span> <span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">PycharmProjects</span><span class="o">/</span><span class="n">analiza</span><span class="o">-</span><span class="n">mediow</span><span class="o">-</span><span class="n">cyfrowych</span><span class="o">/.</span><span class="n">venv</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">174</span>
+<span class="g g-Whitespace">    </span><span class="mi">170</span>             <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="s2">&quot;Matplotlib requires </span><span class="si">{}</span><span class="s2">&gt;=</span><span class="si">{}</span><span class="s2">; you have </span><span class="si">{}</span><span class="s2">&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">171</span>                               <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">modname</span><span class="p">,</span> <span class="n">minver</span><span class="p">,</span> <span class="n">module</span><span class="o">.</span><span class="n">__version__</span><span class="p">))</span>
+<span class="ne">--&gt; </span><span class="mi">174</span> <span class="n">_check_versions</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">177</span> <span class="c1"># The decorator ensures this always returns the same handler (and it is only</span>
+<span class="g g-Whitespace">    </span><span class="mi">178</span> <span class="c1"># attached once).</span>
+
+<span class="nn">File ~/PycharmProjects/analiza-mediow-cyfrowych/.venv/lib/python3.9/site-packages/matplotlib/__init__.py:159,</span> in <span class="ni">_check_versions</span><span class="nt">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">155</span> <span class="k">def</span> <span class="nf">_check_versions</span><span class="p">():</span>
+<span class="g g-Whitespace">    </span><span class="mi">156</span> 
+<span class="g g-Whitespace">    </span><span class="mi">157</span>     <span class="c1"># Quickfix to ensure Microsoft Visual C++ redistributable</span>
+<span class="g g-Whitespace">    </span><span class="mi">158</span>     <span class="c1"># DLLs are loaded before importing kiwisolver</span>
+<span class="ne">--&gt; </span><span class="mi">159</span>     <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">ft2font</span>
+<span class="g g-Whitespace">    </span><span class="mi">161</span>     <span class="k">for</span> <span class="n">modname</span><span class="p">,</span> <span class="n">minver</span> <span class="ow">in</span> <span class="p">[</span>
+<span class="g g-Whitespace">    </span><span class="mi">162</span>             <span class="p">(</span><span class="s2">&quot;cycler&quot;</span><span class="p">,</span> <span class="s2">&quot;0.10&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">163</span>             <span class="p">(</span><span class="s2">&quot;dateutil&quot;</span><span class="p">,</span> <span class="s2">&quot;2.1&quot;</span><span class="p">),</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">166</span>             <span class="p">(</span><span class="s2">&quot;pyparsing&quot;</span><span class="p">,</span> <span class="s2">&quot;2.0.1&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">167</span>     <span class="p">]:</span>
+
+<span class="ne">ImportError</span>: numpy.core.multiarray failed to import
+
+<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
+
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">20</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
+
+<span class="nn">File ~/PycharmProjects/analiza-mediow-cyfrowych/.venv/lib/python3.9/site-packages/networkx/drawing/nx_pylab.py:104,</span> in <span class="ni">draw</span><span class="nt">(G, pos, ax, **kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">102</span>     <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">    </span><span class="mi">103</span> <span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">104</span>     <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="s2">&quot;Matplotlib required for draw()&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+<span class="g g-Whitespace">    </span><span class="mi">105</span> <span class="k">except</span> <span class="ne">RuntimeError</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">106</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matplotlib unable to open display&quot;</span><span class="p">)</span>
+
+<span class="ne">ImportError</span>: Matplotlib required for draw()
+</pre></div>
+</div>
 </div>
 </div>
 <p>Niestety domyślny interfejs jest bardzo ograniczony, dlatego autorzy rekomendują wykorzystanie bibliotek dedykowanych do rysowania grafów takich jak <a class="reference external" href="https://cytoscape.org/"><code class="docutils literal notranslate"><span class="pre">Cytoscape</span></code></a>, <a class="reference external" href="https://gephi.org/"><code class="docutils literal notranslate"><span class="pre">Gephi</span></code></a> czy <a class="reference external" href="https://pygraphviz.github.io/"><code class="docutils literal notranslate"><span class="pre">PyGraphviz</span></code></a>.</p>

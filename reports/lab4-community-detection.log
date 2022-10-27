@@ -1,30 +1,67 @@
 Traceback (most recent call last):
-  File "/home/tomek/.local/share/virtualenvs/analiza-mediow-cyfrowych-iQGABBti/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+  File "/Users/kamiltagowski/PycharmProjects/analiza-mediow-cyfrowych/.venv/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
     executenb(
-  File "/home/tomek/.local/share/virtualenvs/analiza-mediow-cyfrowych-iQGABBti/lib/python3.8/site-packages/nbclient/client.py", line 1117, in execute
+  File "/Users/kamiltagowski/PycharmProjects/analiza-mediow-cyfrowych/.venv/lib/python3.9/site-packages/nbclient/client.py", line 1117, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-  File "/home/tomek/.local/share/virtualenvs/analiza-mediow-cyfrowych-iQGABBti/lib/python3.8/site-packages/nbclient/util.py", line 78, in wrapped
+  File "/Users/kamiltagowski/PycharmProjects/analiza-mediow-cyfrowych/.venv/lib/python3.9/site-packages/nbclient/util.py", line 78, in wrapped
     return just_run(coro(*args, **kwargs))
-  File "/home/tomek/.local/share/virtualenvs/analiza-mediow-cyfrowych-iQGABBti/lib/python3.8/site-packages/nbclient/util.py", line 57, in just_run
+  File "/Users/kamiltagowski/PycharmProjects/analiza-mediow-cyfrowych/.venv/lib/python3.9/site-packages/nbclient/util.py", line 57, in just_run
     return loop.run_until_complete(coro)
-  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+  File "/Users/kamiltagowski/.pyenv/versions/3.9.6/lib/python3.9/asyncio/base_events.py", line 642, in run_until_complete
     return future.result()
-  File "/home/tomek/.local/share/virtualenvs/analiza-mediow-cyfrowych-iQGABBti/lib/python3.8/site-packages/nbclient/client.py", line 558, in async_execute
+  File "/Users/kamiltagowski/PycharmProjects/analiza-mediow-cyfrowych/.venv/lib/python3.9/site-packages/nbclient/client.py", line 558, in async_execute
     await self.async_execute_cell(
-  File "/home/tomek/.local/share/virtualenvs/analiza-mediow-cyfrowych-iQGABBti/lib/python3.8/site-packages/nbclient/client.py", line 862, in async_execute_cell
+  File "/Users/kamiltagowski/PycharmProjects/analiza-mediow-cyfrowych/.venv/lib/python3.9/site-packages/nbclient/client.py", line 862, in async_execute_cell
     self._check_raise_for_error(cell, exec_reply)
-  File "/home/tomek/.local/share/virtualenvs/analiza-mediow-cyfrowych-iQGABBti/lib/python3.8/site-packages/nbclient/client.py", line 765, in _check_raise_for_error
+  File "/Users/kamiltagowski/PycharmProjects/analiza-mediow-cyfrowych/.venv/lib/python3.9/site-packages/nbclient/client.py", line 765, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import networkx as nx
+nx.draw(graph)
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-[0;32m<ipython-input-1-f17d728e971c>[0m in [0;36m<module>[0;34m[0m
-[0;32m----> 1[0;31m [0;32mimport[0m [0mnetworkx[0m [0;32mas[0m [0mnx[0m[0;34m[0m[0;34m[0m[0m
-[0m
-[0;31mModuleNotFoundError[0m: No module named 'networkx'
-ModuleNotFoundError: No module named 'networkx'
+[0;31mImportError[0m                               Traceback (most recent call last)
+File [0;32m~/PycharmProjects/analiza-mediow-cyfrowych/.venv/lib/python3.9/site-packages/networkx/drawing/nx_pylab.py:102[0m, in [0;36mdraw[0;34m(G, pos, ax, **kwds)[0m
+[1;32m    101[0m [38;5;28;01mtry[39;00m:
+[0;32m--> 102[0m     [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m [38;5;28;01mas[39;00m [38;5;21;01mplt[39;00m
+[1;32m    103[0m [38;5;28;01mexcept[39;00m [38;5;167;01mImportError[39;00m [38;5;28;01mas[39;00m e:
+
+File [0;32m~/PycharmProjects/analiza-mediow-cyfrowych/.venv/lib/python3.9/site-packages/matplotlib/__init__.py:174[0m
+[1;32m    170[0m             [38;5;28;01mraise[39;00m [38;5;167;01mImportError[39;00m([38;5;124m"[39m[38;5;124mMatplotlib requires [39m[38;5;132;01m{}[39;00m[38;5;124m>=[39m[38;5;132;01m{}[39;00m[38;5;124m; you have [39m[38;5;132;01m{}[39;00m[38;5;124m"[39m
+[1;32m    171[0m                               [38;5;241m.[39mformat(modname, minver, module[38;5;241m.[39m__version__))
+[0;32m--> 174[0m [43m_check_versions[49m[43m([49m[43m)[49m
+[1;32m    177[0m [38;5;66;03m# The decorator ensures this always returns the same handler (and it is only[39;00m
+[1;32m    178[0m [38;5;66;03m# attached once).[39;00m
+
+File [0;32m~/PycharmProjects/analiza-mediow-cyfrowych/.venv/lib/python3.9/site-packages/matplotlib/__init__.py:159[0m, in [0;36m_check_versions[0;34m()[0m
+[1;32m    155[0m [38;5;28;01mdef[39;00m [38;5;21m_check_versions[39m():
+[1;32m    156[0m 
+[1;32m    157[0m     [38;5;66;03m# Quickfix to ensure Microsoft Visual C++ redistributable[39;00m
+[1;32m    158[0m     [38;5;66;03m# DLLs are loaded before importing kiwisolver[39;00m
+[0;32m--> 159[0m     [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m [38;5;28;01mimport[39;00m ft2font
+[1;32m    161[0m     [38;5;28;01mfor[39;00m modname, minver [38;5;129;01min[39;00m [
+[1;32m    162[0m             ([38;5;124m"[39m[38;5;124mcycler[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124m0.10[39m[38;5;124m"[39m),
+[1;32m    163[0m             ([38;5;124m"[39m[38;5;124mdateutil[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124m2.1[39m[38;5;124m"[39m),
+[0;32m   (...)[0m
+[1;32m    166[0m             ([38;5;124m"[39m[38;5;124mpyparsing[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124m2.0.1[39m[38;5;124m"[39m),
+[1;32m    167[0m     ]:
+
+[0;31mImportError[0m: numpy.core.multiarray failed to import
+
+The above exception was the direct cause of the following exception:
+
+[0;31mImportError[0m                               Traceback (most recent call last)
+Cell [0;32mIn [20], line 1[0m
+[0;32m----> 1[0m [43mnx[49m[38;5;241;43m.[39;49m[43mdraw[49m[43m([49m[43mgraph[49m[43m)[49m
+
+File [0;32m~/PycharmProjects/analiza-mediow-cyfrowych/.venv/lib/python3.9/site-packages/networkx/drawing/nx_pylab.py:104[0m, in [0;36mdraw[0;34m(G, pos, ax, **kwds)[0m
+[1;32m    102[0m     [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m [38;5;28;01mas[39;00m [38;5;21;01mplt[39;00m
+[1;32m    103[0m [38;5;28;01mexcept[39;00m [38;5;167;01mImportError[39;00m [38;5;28;01mas[39;00m e:
+[0;32m--> 104[0m     [38;5;28;01mraise[39;00m [38;5;167;01mImportError[39;00m([38;5;124m"[39m[38;5;124mMatplotlib required for draw()[39m[38;5;124m"[39m) [38;5;28;01mfrom[39;00m [38;5;21;01me[39;00m
+[1;32m    105[0m [38;5;28;01mexcept[39;00m [38;5;167;01mRuntimeError[39;00m:
+[1;32m    106[0m     [38;5;28mprint[39m([38;5;124m"[39m[38;5;124mMatplotlib unable to open display[39m[38;5;124m"[39m)
+
+[0;31mImportError[0m: Matplotlib required for draw()
+ImportError: Matplotlib required for draw()
 

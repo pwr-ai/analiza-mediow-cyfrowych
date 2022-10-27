@@ -1,39 +1,94 @@
 Traceback (most recent call last):
-  File "/home/tomek/.local/share/virtualenvs/analiza-mediow-cyfrowych-iQGABBti/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+  File "/Users/kamiltagowski/PycharmProjects/analiza-mediow-cyfrowych/.venv/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
     executenb(
-  File "/home/tomek/.local/share/virtualenvs/analiza-mediow-cyfrowych-iQGABBti/lib/python3.8/site-packages/nbclient/client.py", line 1117, in execute
+  File "/Users/kamiltagowski/PycharmProjects/analiza-mediow-cyfrowych/.venv/lib/python3.9/site-packages/nbclient/client.py", line 1117, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-  File "/home/tomek/.local/share/virtualenvs/analiza-mediow-cyfrowych-iQGABBti/lib/python3.8/site-packages/nbclient/util.py", line 78, in wrapped
+  File "/Users/kamiltagowski/PycharmProjects/analiza-mediow-cyfrowych/.venv/lib/python3.9/site-packages/nbclient/util.py", line 78, in wrapped
     return just_run(coro(*args, **kwargs))
-  File "/home/tomek/.local/share/virtualenvs/analiza-mediow-cyfrowych-iQGABBti/lib/python3.8/site-packages/nbclient/util.py", line 57, in just_run
+  File "/Users/kamiltagowski/PycharmProjects/analiza-mediow-cyfrowych/.venv/lib/python3.9/site-packages/nbclient/util.py", line 57, in just_run
     return loop.run_until_complete(coro)
-  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+  File "/Users/kamiltagowski/.pyenv/versions/3.9.6/lib/python3.9/asyncio/base_events.py", line 642, in run_until_complete
     return future.result()
-  File "/home/tomek/.local/share/virtualenvs/analiza-mediow-cyfrowych-iQGABBti/lib/python3.8/site-packages/nbclient/client.py", line 558, in async_execute
+  File "/Users/kamiltagowski/PycharmProjects/analiza-mediow-cyfrowych/.venv/lib/python3.9/site-packages/nbclient/client.py", line 558, in async_execute
     await self.async_execute_cell(
-  File "/home/tomek/.local/share/virtualenvs/analiza-mediow-cyfrowych-iQGABBti/lib/python3.8/site-packages/nbclient/client.py", line 862, in async_execute_cell
+  File "/Users/kamiltagowski/PycharmProjects/analiza-mediow-cyfrowych/.venv/lib/python3.9/site-packages/nbclient/client.py", line 862, in async_execute_cell
     self._check_raise_for_error(cell, exec_reply)
-  File "/home/tomek/.local/share/virtualenvs/analiza-mediow-cyfrowych-iQGABBti/lib/python3.8/site-packages/nbclient/client.py", line 765, in _check_raise_for_error
+  File "/Users/kamiltagowski/PycharmProjects/analiza-mediow-cyfrowych/.venv/lib/python3.9/site-packages/nbclient/client.py", line 765, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-from sklearn.datasets import fetch_20newsgroups
+import spacy
 
-newsgroups = fetch_20newsgroups()
+# wczytujemy moduł językowy spacy - obsługa innych języków: https://spacy.io/usage/models
+nlp = spacy.load("en_core_web_sm", disable=["parser", "ner"])
 
-data = newsgroups["data"][:25000]
-print(data[0])
+cleaned = []
+
+for text in data:
+    doc = nlp(text)
+
+    cleaned.append(
+        [
+            token.lemma_.lower()
+            for token in doc
+            if not (
+                token.is_stop
+                or token.is_punct
+                or token.like_email
+                or token.like_url
+                or token.like_num
+                or token.is_digit
+                or token.pos_ not in ["NOUN", "ADJ", "VERB", "ADV"]
+            )
+        ]
+    )
+
+print(cleaned[0])
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-[0;32m<ipython-input-1-f871d04a2637>[0m in [0;36m<module>[0;34m[0m
-[0;32m----> 1[0;31m [0;32mfrom[0m [0msklearn[0m[0;34m.[0m[0mdatasets[0m [0;32mimport[0m [0mfetch_20newsgroups[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      2[0m [0;34m[0m[0m
-[1;32m      3[0m [0mnewsgroups[0m [0;34m=[0m [0mfetch_20newsgroups[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      4[0m [0;34m[0m[0m
-[1;32m      5[0m [0mdata[0m [0;34m=[0m [0mnewsgroups[0m[0;34m[[0m[0;34m"data"[0m[0;34m][0m[0;34m[[0m[0;34m:[0m[0;36m25000[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[0;31mValueError[0m                                Traceback (most recent call last)
+Cell [0;32mIn [2], line 1[0m
+[0;32m----> 1[0m [38;5;28;01mimport[39;00m [38;5;21;01mspacy[39;00m
+[1;32m      3[0m [38;5;66;03m# wczytujemy moduł językowy spacy - obsługa innych języków: https://spacy.io/usage/models[39;00m
+[1;32m      4[0m nlp [38;5;241m=[39m spacy[38;5;241m.[39mload([38;5;124m"[39m[38;5;124men_core_web_sm[39m[38;5;124m"[39m, disable[38;5;241m=[39m[[38;5;124m"[39m[38;5;124mparser[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mner[39m[38;5;124m"[39m])
 
-[0;31mModuleNotFoundError[0m: No module named 'sklearn'
-ModuleNotFoundError: No module named 'sklearn'
+File [0;32m~/PycharmProjects/analiza-mediow-cyfrowych/.venv/lib/python3.9/site-packages/spacy/__init__.py:11[0m
+[1;32m      8[0m setup_default_warnings()  [38;5;66;03m# noqa: E402[39;00m
+[1;32m     10[0m [38;5;66;03m# These are imported as part of the API[39;00m
+[0;32m---> 11[0m [38;5;28;01mfrom[39;00m [38;5;21;01mthinc[39;00m[38;5;21;01m.[39;00m[38;5;21;01mapi[39;00m [38;5;28;01mimport[39;00m prefer_gpu, require_gpu, require_cpu  [38;5;66;03m# noqa: F401[39;00m
+[1;32m     12[0m [38;5;28;01mfrom[39;00m [38;5;21;01mthinc[39;00m[38;5;21;01m.[39;00m[38;5;21;01mapi[39;00m [38;5;28;01mimport[39;00m Config
+[1;32m     14[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m [38;5;28;01mimport[39;00m pipeline  [38;5;66;03m# noqa: F401[39;00m
+
+File [0;32m~/PycharmProjects/analiza-mediow-cyfrowych/.venv/lib/python3.9/site-packages/thinc/api.py:2[0m
+[1;32m      1[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mconfig[39;00m [38;5;28;01mimport[39;00m Config, registry, ConfigValidationError
+[0;32m----> 2[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01minitializers[39;00m [38;5;28;01mimport[39;00m normal_init, uniform_init, glorot_uniform_init, zero_init
+[1;32m      3[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01minitializers[39;00m [38;5;28;01mimport[39;00m configure_normal_init
+[1;32m      4[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mloss[39;00m [38;5;28;01mimport[39;00m CategoricalCrossentropy, L2Distance, CosineDistance
+
+File [0;32m~/PycharmProjects/analiza-mediow-cyfrowych/.venv/lib/python3.9/site-packages/thinc/initializers.py:4[0m
+[1;32m      1[0m [38;5;28;01mfrom[39;00m [38;5;21;01mtyping[39;00m [38;5;28;01mimport[39;00m Callable, cast
+[1;32m      2[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m
+[0;32m----> 4[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mbackends[39;00m [38;5;28;01mimport[39;00m Ops
+[1;32m      5[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mconfig[39;00m [38;5;28;01mimport[39;00m registry
+[1;32m      6[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mtypes[39;00m [38;5;28;01mimport[39;00m FloatsXd, Shape
+
+File [0;32m~/PycharmProjects/analiza-mediow-cyfrowych/.venv/lib/python3.9/site-packages/thinc/backends/__init__.py:8[0m
+[1;32m      5[0m [38;5;28;01mimport[39;00m [38;5;21;01mthreading[39;00m
+[1;32m      7[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mops[39;00m [38;5;28;01mimport[39;00m Ops
+[0;32m----> 8[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mcupy_ops[39;00m [38;5;28;01mimport[39;00m CupyOps, has_cupy
+[1;32m      9[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mnumpy_ops[39;00m [38;5;28;01mimport[39;00m NumpyOps
+[1;32m     10[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01m_cupy_allocators[39;00m [38;5;28;01mimport[39;00m cupy_tensorflow_allocator, cupy_pytorch_allocator
+
+File [0;32m~/PycharmProjects/analiza-mediow-cyfrowych/.venv/lib/python3.9/site-packages/thinc/backends/cupy_ops.py:19[0m
+[1;32m     17[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01m.[39;00m [38;5;28;01mimport[39;00m registry
+[1;32m     18[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mops[39;00m [38;5;28;01mimport[39;00m Ops
+[0;32m---> 19[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mnumpy_ops[39;00m [38;5;28;01mimport[39;00m NumpyOps
+[1;32m     20[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m [38;5;28;01mimport[39;00m _custom_kernels
+[1;32m     21[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01m.[39;00m[38;5;21;01mtypes[39;00m [38;5;28;01mimport[39;00m DeviceTypes
+
+File [0;32m~/PycharmProjects/analiza-mediow-cyfrowych/.venv/lib/python3.9/site-packages/thinc/backends/numpy_ops.pyx:1[0m, in [0;36minit thinc.backends.numpy_ops[0;34m()[0m
+
+[0;31mValueError[0m: numpy.ndarray size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject
+ValueError: numpy.ndarray size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject
 
